@@ -120,9 +120,8 @@ img, svg {
 .hero{
   position: relative;
   color: var(--on-dark);
-  /* keep space under sticky header (adjust if your header is taller) */
-  padding-block: clamp(64px, 7vw, 120px);
-  min-height: clamp(560px, 78vh, 840px);
+  padding-block: clamp(100px, 12vw, 160px);
+  min-height: clamp(700px, 92vh, 980px);
   overflow: clip;
 }
 
@@ -196,26 +195,34 @@ img, svg {
 .hero__grid{
   position: relative; z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 560px) minmax(0, 520px);
+  grid-template-columns: minmax(0, 580px) minmax(0, 520px);
   align-items: center;
-  gap: clamp(24px, 4vw, 56px);
+  gap: clamp(48px, 7vw, 100px);
 }
 
 /* Typography tuned to your screenshot */
 .hero__title{
-  margin: 0 0 14px;
-  font-weight: 700;
-  letter-spacing: .2px;
-  line-height: 1.06;
-  font-size: clamp(2.25rem, 1.1rem + 4.8vw, 3.75rem);
+  margin: 0 0 28px;
+  font-weight: 800;
+  letter-spacing: -.3px;
+  line-height: 1.1;
+  font-size: clamp(1.9rem, 1.1rem + 2.4vw, 3rem);
   text-shadow: 0 2px 22px rgba(0,0,0,.28);
 }
 
+.hero__accent {
+  background: linear-gradient(120deg, #ff6a4a 0%, #ffb347 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .hero__subtitle{
-  margin: 0 0 26px;
+  margin: 0 0 44px;
   color: var(--ink-muted);
-  font-size: clamp(1rem, .9rem + .5vw, 1.125rem);
-  max-width: 56ch;
+  font-size: clamp(1.05rem, .95rem + .5vw, 1.25rem);
+  line-height: 1.75;
+  max-width: 52ch;
 }
 
 /* Actions */
@@ -318,37 +325,52 @@ img, svg {
   background: linear-gradient(
     to right,
     #FBF6E1 0%,
-    #FBF6E1 52%,    /* beige covers left half */
-    #ffffff 52%,    /* white begins here */
+    #FBF6E1 52%,
+    #ffffff 52%,
     #ffffff 100%
   );
-  padding-block: clamp(80px, 12vw, 140px);
+  padding-top: clamp(64px, 9vw, 110px);
+  padding-bottom: 0;           /* image seats flush at the bottom */
   color: #0f172a;
   overflow: hidden;
 }
 
 .about-feature__grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr; /* image | text */
-  align-items: center;
-  gap: clamp(40px, 6vw, 80px);
-  max-width: 1200px;
+  grid-template-columns: 1.6fr 1fr;
+  align-items: stretch;        /* both columns same height */
+  gap: clamp(32px, 5vw, 64px);
+  max-width: 1280px;
   margin-inline: auto;
-  padding-inline: 20px;
+  padding-inline: clamp(20px, 4vw, 40px);
+  min-height: 680px;
 }
 
-/* LEFT: image block */
+/* LEFT: image fills and sits flush on the section floor */
 .about-feature__image {
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.about-feature__image img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
+.team-photo-wrap {
+  position: relative;
+  line-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  transform: translateY(18%);  /* clip transparent bottom padding of PNG */
 }
 
-/* floating role tags */
+.team-photo-wrap img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
 /* ===========================
    FLOATING ROLE TAGS
 =========================== */
@@ -358,63 +380,58 @@ img, svg {
   font-size: 0.875rem;
   font-weight: 600;
   color: #fff;
-  padding: 6px 12px;
-  border-radius: 4px;
+  padding: 8px 14px;
   letter-spacing: 0.2px;
   opacity: 0;
-  z-index: 2; /* makes sure tags appear above the image */
+  z-index: 2;
+  border-radius: 0;
   animation: fadeInTag 0.8s ease forwards, floatTag 4s ease-in-out infinite;
 }
 
-/* Purple tag on top-left */
+/* Purple tag — above left person's head */
 .tag--purple {
   background: #6b3eff;
-  top: 22%;
-  left: 6%;
-  border-radius: 0;
-
+  top: 38%;
+  left: 8%;
   animation-delay: 0.3s;
   animation-duration: 4.5s;
 }
 
-/* Brown tag on top-right */
+/* Brown tag — above right person's head */
 .tag--brown {
   background: #a43c25;
-  top: 25%;
-  right: 30%;
-  border-radius: 0;
+  top: 46%;
+  left: 52%;
   animation-delay: 0.6s;
   animation-duration: 4.2s;
 }
 
-/* Tag fade and float motion */
+/* Tag fade in (opacity only — keep transform free for floatTag) */
 @keyframes fadeInTag {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes floatTag {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
 }
 
 
-/* RIGHT: text block */
-
-.about-feature__text{
-  margin-top: -64px;
-  margin-bottom: 64px;
+/* RIGHT: text block — vertically centered in white column */
+.about-feature__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: clamp(48px, 7vw, 80px);
 }
+
 .about-feature__text h2 {
-  font-weight: 700;
-  font-size: clamp(2rem, 1.3rem + 1.6vw, 2.5rem);
+  font-weight: 800;
+  font-size: clamp(1.85rem, 1.2rem + 1.6vw, 2.4rem);
   color: #0f172a;
+  line-height: 1.2;
+  margin: 0 0 1rem;
 }
 
 .about-feature__text .accent {
@@ -422,15 +439,20 @@ img, svg {
 }
 
 .about-feature__text p {
-  color: #4b5563;
-  line-height: 1.7;
-  margin-bottom: 2rem;
+  color: #6b7280;
+  line-height: 1.8;
+  font-size: 0.97rem;
+  margin: 0 0 1.75rem;
+  max-width: 48ch;
 }
 
 .about-feature__text h3 {
   font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 1rem;
 }
 
 /* Feature list */
@@ -440,63 +462,42 @@ img, svg {
   margin: 0;
   display: flex;
   flex-direction: column;
-  column-gap: 1rem;
+  gap: 0;                     /* gap handled by padding on li */
 }
 
 .feature-list li {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
-  line-height: 1.2rem;
-  width: 100%;
-  gap: 10px;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
   color: #4b5563;
   line-height: 1.6;
+  font-size: 0.95rem;
 }
+
+.feature-list li:first-child { border-top: 1px solid #f0f0f0; }
 
 .feature-list li .fa-solid {
-  width: 20px;
-  height: 20px;
+  font-size: 1rem;
+  color: #ff6a4a;
   flex-shrink: 0;
-  margin-top: 12px;
-  align-items: center;
-}
-.about-feature__grid{
-  grid-template-columns: 1.3fr 1fr;   /* was 1.1fr 1fr */
-  align-items: end;                    /* anchors content to section bottom */
+  margin-top: 2px;
 }
 
-/* 2) Let the image container act like a stage and anchor image to bottom */
-.about-feature__image{
-  position: relative;
+.feature-list li > span {
   display: flex;
-  align-items: flex-end;               /* image sits on the bottom */
-  justify-content: flex-start;
-  min-height: clamp(360px, 42vw, 560px); /* ensures a nice tall stage */
-  overflow: visible;
+  flex-direction: column;
+  gap: 3px;
 }
 
-/* 3) Enlarge the image and nudge it down to kiss the bottom edge */
-.about-feature__image img{
-  width: min(720px, 150%);             /* allow >100% of its column */
-  max-width: none;
-  height: auto;
+.feature-list li strong {
   display: block;
-  object-fit: contain;
-  transform: scale(1.2);    /* tiny push so it “seats” on bottom */
-  border-radius: 4px;
-  margin-bottom: -120px;   /* nudge it down */;
-}
-
-/* 4) Slightly reduce section bottom padding so the seating looks intentional */
-.about-feature{
-  padding-block: clamp(72px, 10vw, 120px) 56px;  /* top  stays fluid, bottom tighter */
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 /* ===== About – Collab (text left, art right) ===== */
-:root{
-  --collab-pink: #F8EDF6;  /* tweak to match your Figma */
-  --split-at: 52%;
-}
 
 .about-collab{
   position: relative;
@@ -504,38 +505,67 @@ img, svg {
   background: linear-gradient(
     to right,
     #ffffff 0%,
-    #ffffff var(--split-at),
-    var(--collab-pink) var(--split-at),
-    var(--collab-pink) 100%
+    #ffffff 52%,
+    #F8EDF6 52%,
+    #F8EDF6 100%
   );
-  padding-block: clamp(72px, 10vw, 120px);
+  padding-block: clamp(64px, 9vw, 110px);
 }
 
 .collab__grid{
   display: grid;
-  grid-template-columns: 1.1fr 1fr; /* text | art */
+  grid-template-columns: 1.1fr 1fr;
   align-items: center;
-  gap: clamp(32px, 5vw, 72px);
+  gap: clamp(40px, 6vw, 80px);
   max-width: 1200px;
   margin-inline: auto;
-  padding-inline: 20px;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+.collab__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .collab__text h2{
   margin: 0 0 1rem;
-  font-weight: 700;
-  font-size: clamp(2rem, 1.3rem + 1.6vw, 2.5rem);
+  font-weight: 800;
+  font-size: clamp(1.85rem, 1.2rem + 1.6vw, 2.4rem);
+  line-height: 1.2;
 }
 .collab__text .accent{ color:#ff6a4a; }
-.collab__text p{ color:#4b5563; line-height:1.7; margin:0 0 2rem; }
-.collab__text h3{ font-weight:700; font-size:1.25rem; margin:0 0 1rem; }
-
-/* Icons cluster on the right */
-.collab__art{
-  display: grid;
-  place-items: center;
-  padding-block: 24px;
+.collab__text p{
+  color:#6b7280;
+  line-height:1.8;
+  font-size: 0.97rem;
+  margin: 0 0 1.75rem;
+  max-width: 48ch;
 }
+.collab__text h3{
+  font-weight: 700;
+  font-size: 1rem;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 1rem;
+}
+
+/* Art column on the right */
+.collab__art{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+}
+.collab__art img{
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
 .icon-grid{
   display: grid;
   grid-template-columns: repeat(4, minmax(44px, 64px));
@@ -547,33 +577,30 @@ img, svg {
   display: block;
 }
 
-/* ---- Shared feature list from earlier block ---- */
-.feature-list{
-  list-style:none; margin:0; padding:0; display:grid; gap:1rem;
-}
-.feature-list li{
-  display:flex; align-items:flex-start; gap:10px; color:#4b5563; line-height:1.6;
-}
-.feature-list li img{ width:20px; height:20px; flex-shrink:0; margin-top:4px; }
-
 /* ===== Responsive ===== */
 
-/* Tablet: stack, keep left alignment */
+/* Tablet: stack */
 @media (max-width: 900px){
   .about-collab{
-    background: #fff;     /* drop split background for simplicity */
-    padding-block: 56px;
+    background: #F8EDF6;
+    padding-block: 56px 0;
   }
   .collab__grid{
     grid-template-columns: 1fr;
-    gap: 28px;
-    justify-items: start;  /* left align on mobile as requested */
-    text-align: left;
+    gap: 0;
   }
+  .collab__text {
+    background: #fff;
+    padding: 36px clamp(20px, 5vw, 40px);
+    order: -1;
+  }
+  .collab__text p { max-width: 100%; }
   .collab__art{
-    order: -1;            /* art above text (optional) */
+    padding: 24px 16px 0;
     width: 100%;
+    justify-content: center;
   }
+  .collab__art img { max-width: min(80%, 380px); border-radius: 10px 10px 0 0; }
 }
 /* Small phones */
 @media (max-width: 520px){
@@ -586,62 +613,6 @@ img, svg {
   .feature-list li img{ width:18px; height:18px; }
 }
 
-  /* ===============================
-     ABOUT – COLLAB (text L, art R)
-  ================================ */
-  :root{
-    --collab-pink: #F8EDF6; /* soft pink from your comp */
-  }
-
-  .about-collab{
-    position: relative;
-    color: #0f172a;
-    background: linear-gradient(
-      to right,
-      #ffffff 0%,
-      #ffffff 52%,
-      var(--collab-pink) 52%,
-      var(--collab-pink) 100%
-    );
-    padding-block: clamp(72px, 10vw, 120px);
-  }
-
-  .collab__grid{
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;   /* text | art */
-    align-items: center;
-    gap: clamp(32px, 5vw, 72px);
-    max-width: 1200px;
-    margin-inline: auto;
-    padding-inline: 20px;
-  }
-
-  .collab__text h2{
-    margin:0 0 12px;
-    font-weight:800;
-    letter-spacing:.2px;
-    font-size:clamp(2rem, 1.3rem + 1.6vw, 2.6rem);
-  }
-  .collab__text .accent{ color:#ff6a4a; }
-  .collab__text p{
-    color:#4b5563;
-    line-height:1.7;
-    margin:0 0 24px;
-  }
-  .collab__text h3{
-    margin:0 0 12px;
-    font-size:1.125rem;
-    font-weight:700;
-  }
-
-  /* feature list reused */
-  .feature-list{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
-  .feature-list li{ display:flex; gap:10px; align-items:flex-start; color:#4b5563; line-height:1.6; }
-  .feature-list li img{ width:20px; height:20px; flex-shrink:0; margin-top:4px; }
-
-  /* right art */
-  .collab__art{ display:grid; place-items:center; padding-block:18px; }
-  .collab__art img{ max-width:520px; width:100%; height:auto; display:block; }
 
 /* =======================================================
    MODULES — INTRO + TABS + CARDS (Figma-accurate)
@@ -1534,7 +1505,7 @@ img, svg {
   }
 
   .hero__title {
-    font-size: clamp(1.8rem, 1rem + 4vw, 2.8rem);
+    font-size: clamp(1.75rem, 1rem + 3vw, 2rem);
     line-height: 1.15;
   }
 
@@ -1580,77 +1551,48 @@ img, svg {
 }
 /* Tablet & down */
 @media (max-width: 900px) {
-  /* Drop the split background; keep it simple on mobile */
   .about-feature {
-    background: #fff;
-    padding-block: 56px;
+    background: #FBF6E1;
+    padding-top: 48px;
+    padding-bottom: 0;
   }
 
-  /* Stack columns, left aligned */
   .about-feature__grid {
     grid-template-columns: 1fr;
-    gap: 28px;
-    justify-items: start;
-    text-align: left;
+    gap: 0;
   }
 
-  /* Image: sit above text, left aligned, sensible size */
   .about-feature__image {
-    min-height: auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    min-height: 280px;
+    justify-content: center;
+    order: -1;
   }
   .about-feature__image img {
-    width: min(92%, 440px);
-    max-width: 440px;
-    transform: none;      /* remove desktop nudge */
-  }
-
-  /* Tags: smaller & closer to subject */
-  .tag {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-  }
-  .tag--purple { top: 14%; left: 10%; }
-  .tag--brown  { top: 18%; right: 12%; }
-
-  /* Text block: left aligned with comfortable width */
-  .about-feature__text {
-    max-width: 640px;
     width: 100%;
-    justify-content: flex-start;
-  }
-  .about-feature__text h2 {
-    font-size: 1.78rem;
-    margin-bottom: 0.75rem;
-  }
-  .about-feature__text p {
-    font-size: 0.98rem;
-    margin-bottom: 1.25rem;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    transform: none;
   }
 
-  /* Feature list stays readable and left aligned */
-  .feature-list {
-    gap: 0.75rem;
+  .tag { font-size: 0.78rem; padding: 6px 10px; }
+  .tag--purple { top: 28%; left: 6%; }
+  .tag--brown  { top: 36%; left: 50%; }
+
+  .about-feature__text {
+    background: #fff;
+    padding: 36px clamp(20px, 5vw, 40px);
+    border-radius: 0;
   }
-  .feature-list li {
-    justify-content: flex-start;
-    text-align: left;
-  }
-  .feature-list li img {
-    width: 18px; height: 18px;
-  }
+  .about-feature__text h2 { font-size: 1.72rem; }
+  .about-feature__text p { max-width: 100%; }
 }
 
   /* Small phones */
   @media (max-width: 480px) {
-    .about-feature { padding-block: 48px; }
-    .about-feature__image img { width: min(96%, 380px); }
-    .about-feature__text h2 { font-size: 1.62rem; }
-    .tag--purple { top: 12%; left: 12%; }
-    .tag--brown  { top: 16%; right: 10%; }
-  }  /* ← CLOSES the 480px block */
+    .about-feature__text h2 { font-size: 1.52rem; }
+    .tag--purple { top: 28%; left: 5%; }
+    .tag--brown  { top: 36%; left: 48%; }
+  }
 
   /* Nav menu on mobile */
   @media (max-width: 768px) {
@@ -1848,14 +1790,9 @@ img, svg {
  
 
   .about-feature__image img {
-    max-width: 200%;
+    width: 100%;
     height: auto;
     display: block;
-    max-height: 100%;  
-    justify-content: center;   
-    align-items: center;  /* stretch but preserve ratio */    /* ensure full image is visible */
-       transform: translateY(48px) translateX(50px) scale(1.18);  
-
   }
   }
 
@@ -1985,4 +1922,151 @@ img, svg {
 
 .email-input::placeholder {
   color: #9ca3af;
+}
+
+/* =========== VIDEO SHOWCASE =========== */
+.video-showcase {
+  background: #0f1115;
+  padding: 80px 0;
+}
+
+.video-showcase__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.video-showcase .section-label {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.video-showcase__title {
+  color: #ffffff;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.video-showcase__sub {
+  color: #9ca3af;
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0;
+}
+
+.video-showcase__player {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+}
+
+.video-showcase__player video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .video-showcase {
+    padding: 48px 0;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+/* ── Typewriter cursor ── */
+.tw-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.82em;
+  background: currentColor;
+  border-radius: 1px;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: twBlink 0.7s step-end infinite;
+}
+.tw-cursor--done {
+  animation: twFadeOut 0.4s ease forwards;
+}
+@keyframes twBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes twFadeOut {
+  to { opacity: 0; width: 0; margin: 0; }
+}
+
+/* ── Hero badge ── */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 106, 74, 0.12);
+  border: 1px solid rgba(255, 106, 74, 0.35);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+  animation: heroFadeUp 0.6s ease 0.1s both;
+}
+
+/* ── Hero entry animations (on load, no scroll trigger) ── */
+/* 12 words × 160ms + 300ms initial delay ≈ 2.2s total */
+.hero__subtitle { animation: heroFadeUp 0.7s ease 2.4s both; }
+.hero__actions  { animation: heroFadeUp 0.7s ease 2.75s both; }
+.hero__media    { animation: heroSlideIn 0.9s ease 0.2s both; }
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes heroSlideIn {
+  from { opacity: 0; transform: translateX(44px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Scroll reveal ── */
+[data-reveal] {
+  opacity: 0;
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+[data-reveal="up"]    { transform: translateY(36px); }
+[data-reveal="left"]  { transform: translateX(-40px); }
+[data-reveal="right"] { transform: translateX(40px); }
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger siblings within a reveal group — delay is applied via JS setTimeout,
+   but also set as transition-delay so CSS-only fallback looks clean */
+[data-reveal][data-delay="100"] { transition-delay: 0.1s; }
+[data-reveal][data-delay="150"] { transition-delay: 0.15s; }
+[data-reveal][data-delay="200"] { transition-delay: 0.2s; }
+[data-reveal][data-delay="300"] { transition-delay: 0.3s; }
+[data-reveal][data-delay="400"] { transition-delay: 0.4s; }
+
+/* Mobile: keep reveal but reduce movement */
+@media (max-width: 768px) {
+  [data-reveal="left"],
+  [data-reveal="right"] {
+    transform: translateY(28px);
+  }
 }

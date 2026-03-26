@@ -6,9 +6,8 @@
   <meta name="viewport" content="width=device-width">
   <title>Obiri</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-   <link rel="icon" type="image/png" href="assets/favicon.ico" />
+  <link rel="icon" type="image/png" href="assets/favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
 <body>
@@ -24,7 +23,6 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="#about-feature">About</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#FAQ">FAQ</a></li>
         </ul>
       </nav>
@@ -38,71 +36,79 @@
       </button>
     </div>
   </header>
+
   <section id="hero" class="hero">
     <div class="hero__bg" aria-hidden="true"></div>
 
     <div class="container hero__grid">
       <!-- Left: copy -->
       <div class="hero__copy">
-        <h1 class="hero__title">Track All Your<br>Business Operations</h1>
+        <div class="hero__badge">Early access · Now open</div>
+        <h1 class="hero__title">Built for the business you are. Ready for the business you'll become.</h1>
         <p class="hero__subtitle">
-          Experience powerful tools to automate, monitor, and scale
-          your business with ease
+          ObiriERP brings structure, clarity, and effortless control to every part of your business operations, from day
+          one.
         </p>
 
         <div class="hero__actions">
-           <form class="email-hero" action="#" method="post">
-        <label for="hero-email" class="visually-hidden">E-mail Address</label>
-    <input
-      id="hero-email"
-      class="email-input"
-      name="email"
-      type="email"
-      placeholder="Enter your Email"
-      required
-    >
-         <a href="#demo" class="btn btn--primary">
-            Join Waitlist
-            <i class="fa-solid fa-arrow-right icon"></i>
-          </a>
-           </form>
+          <form class="email-hero" action="#" method="post">
+            <label for="hero-email" class="visually-hidden">E-mail Address</label>
+            <input id="hero-email" class="email-input" name="email" type="email" placeholder="Enter your Email"
+              required>
+            <a href="#demo" class="btn btn--primary">
+              Get Early Access
+              <i class="fa-solid fa-arrow-right icon"></i>
+            </a>
+          </form>
         </div>
       </div>
 
       <!-- Right: product mock -->
       <div class="hero__media">
-        <img
-          src="assets/img/hero-dashboard.png"
-          alt="Analytics dashboard preview"
-          width="980" height="720" loading="eager"
-        />
+        <img src="assets/img/modules/obiri-card2.png" alt="Analytics dashboard preview" width="980" height="720"
+          loading="eager" />
       </div>
     </div>
   </section>
+
+  <!-- Video Section -->
+  <section class="video-showcase">
+    <div class="container video-showcase__inner">
+      <span class="section-label" data-reveal="up">See It In Action</span>
+      <h2 class="video-showcase__title" data-reveal="up" data-delay="100">One platform. Every part of your business.</h2>
+      <p class="video-showcase__sub" data-reveal="up" data-delay="200">Watch how Obiri brings your operations, finance, and team into one clear view.</p>
+      <div class="video-showcase__player" data-reveal="up" data-delay="300">
+        <video src="assets/video/is-coming.mp4" autoplay muted loop playsinline controls></video>
+      </div>
+    </div>
+  </section>
+
   <section id="about-intro" class="about-intro">
     <div class="container-about__grid">
-      <div class="about__image">
+      <div class="about__image" data-reveal="left">
         <img src="assets/img/africa-map.png" alt="Africa map" loading="lazy" />
       </div>
 
-      <div class="about__text">
+      <div class="about__text" data-reveal="right">
         <h2>Built for African businesses.</h2>
-        <p>More than a software, it’s your business command center.</p>
+        <p>More than a software, it's your business command center.</p>
       </div>
     </div>
   </section>
+
   <section id="about-feature" class="about-feature">
     <div class="container about-feature__grid">
       <!-- LEFT: Image -->
-
-      <div class="about-feature__image">
-        <img src="assets/img/team-collab.png" alt="Team collaboration" />
+      <div class="about-feature__image" data-reveal="left">
+        <div class="team-photo-wrap">
+          <img src="assets/img/team-collab.png" alt="Team collaboration" />
+        </div>
         <div class="tag tag--purple">Accounting Officer</div>
         <div class="tag tag--brown">Sales Manager</div>
       </div>
 
       <!-- RIGHT: Text -->
-      <div class="about-feature__text">
+      <div class="about-feature__text" data-reveal="right" data-delay="100">
         <h2>
           Be more in sync with<br />
           your team in <span class="accent">Obiri</span>
@@ -118,515 +124,367 @@
         <h3>Why teams love it</h3>
         <ul class="feature-list">
           <li>
-              <i class="fa-solid fa-chart-line"></i>
-              <strong>Shared Dashboards</strong> – Everyone sees the same numbers,
-              the same progress, the same updates. Transparency builds trust.
-            </li>
-            <li>
-              <i class="fa-solid fa-rotate-right"></i>
-              <strong>Real-Time Updates</strong> – Changes made in Lagos show
-              instantly in Abuja. No delays, no missing data.
-            </li>
-            <li>
-              <i class="fa-solid fa-circle-check"></i>
-              <strong>Clear Accountability</strong> – Assign tasks, track owners,
-              and never lose sight of responsibilities again.
-</li>
-
+            <i class="fa-solid fa-chart-line"></i>
+            <span><strong>Shared Dashboards</strong>Everyone sees the same numbers, the same progress, the same updates. Transparency builds trust.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-rotate-right"></i>
+            <span><strong>Real-Time Updates</strong>Changes made in Lagos show instantly in Abuja. No delays, no missing data.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-check"></i>
+            <span><strong>Clear Accountability</strong>Assign tasks, track owners, and never lose sight of responsibilities again.</span>
+          </li>
         </ul>
       </div>
     </div>
   </section>
+
   <section id="about-collab" class="about-collab">
     <div class="container collab__grid">
       <!-- LEFT: copy -->
-      <div class="collab__text">
-       <h2>Manage Every Location<br> From One Central Dashboard</h2>
+      <div class="collab__text" data-reveal="left">
+        <h2>Manage Every Location<br> From One Central Dashboard</h2>
 
-<p>
-  Whether you run multiple branches, warehouses, outlets, or an entire group of 
-  businesses, OBIRI keeps everything connected. Each location operates 
-  independently — but you still get full oversight of sales, stock, expenses, 
-  staff activity, and performance in real time.
-</p>
+        <p>
+          Whether you run multiple branches, warehouses, outlets, or an entire group of
+          businesses, OBIRI keeps everything connected. Each location operates
+          independently — but you still get full oversight of sales, stock, expenses,
+          staff activity, and performance in real time.
+        </p>
 
-<h3>Why multi-location businesses rely on OBIRI</h3>
-<ul class="feature-list">
-  <li>
-    <i class="fa-solid fa-network-wired"></i>
-    <strong>Centralized Control</strong> – Monitor all branches from a single 
-    dashboard without disrupting how each team works locally.
-  </li>
-
-  <li>
-    <i class="fa-solid fa-layer-group"></i>
-    <strong>Multi-Tenant Separation</strong> – Each location or business unit 
-    gets its own clean environment, data, and permissions — but you can switch 
-    between them instantly.
-  </li>
-
-  <li>
-    <i class="fa-solid fa-globe-africa"></i>
-    <strong>Unified Reporting</strong> – Compare performance across locations, 
-    track trends, spot low stock, and make decisions backed by real numbers.
-  </li>
-</ul>
-
-
+        <h3>Why multi-location businesses rely on OBIRI</h3>
+        <ul class="feature-list">
+          <li>
+            <i class="fa-solid fa-network-wired"></i>
+            <span><strong>Centralized Control</strong>Monitor all branches from a single dashboard without disrupting how each team works locally.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-layer-group"></i>
+            <span><strong>Multi-Tenant Separation</strong>Each location gets its own clean environment, data, and permissions — but you can switch between them instantly.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-globe-africa"></i>
+            <span><strong>Unified Reporting</strong>Compare performance across locations, track trends, spot low stock, and make decisions backed by real numbers.</span>
+          </li>
         </ul>
       </div>
 
       <!-- RIGHT: icons cluster -->
-      <div class="collab__art">
-          <img src="assets/img/i-1.png" alt="">
+      <div class="collab__art" data-reveal="right" data-delay="100">
+        <img src="assets/img/i-1.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules Section -->
+  <section id="features" class="module-intro-section">
+    <div class="module-intro-container" data-reveal="up">
+      <h2 class="module-intro-title">Most Used Modules</h2>
+      <p class="module-intro-description">No more scattered spreadsheets. No more blind spots. Just one clear view of
+        your business.</p>
+    </div>
+
+    <!-- Category Tabs / Pills -->
+    <div class="container modules__tabs" id="modules-tabs" role="tablist" data-reveal="up" data-delay="100">
+      <button class="tab is-active" type="button" data-tab="orders">Order Management</button>
+      <button class="tab" type="button" data-tab="finance">Accounting and Finance</button>
+      <button class="tab" type="button" data-tab="ops">Business Operations</button>
+    </div>
+
+    <!-- Cards Wrapper for Tab Switching -->
+    <div class="modules__cards-wrapper" id="modules-panes">
+      <!-- Tab 1 -->
+      <div class="tab-content active" data-tab="orders">
+        <div class="container modules__cards">
+          <div class="module-testimonial-card">
+            <p>
+              "Before OBIRI, reconciling our books was a nightmare — we often lost track of daily expenses.
+              With OBIRI's accounting module, we close our books in hours, not weeks. Our financial accuracy
+              has improved dramatically."
+            </p>
+            <div class="user">
+              <img src="assets/img/avatar/User-7.jpg" alt="Adewale Adetayo">
+              <div class="user__info">
+                <strong>Adewale Adetayo</strong>
+                <span>Account Manager</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              <div>
+                <strong>Sa ire</strong><br>
+                <small>92% reduction in errors</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="obiri-card">
+            <img src="assets/img/modules/order-module.png" alt="Obiri Service Module" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2 -->
+      <div class="tab-content" data-tab="finance">
+        <div class="container modules__cards">
+          <div class="module-testimonial-card">
+            <p>"With OBIRI Finance, we now close our books in hours, not weeks..."</p>
+            <div class="user">
+              <img src="assets/img/avatar/User-6.jpg" alt="Chioma Ade">
+              <div class="user__info">
+                <strong>Chioma Ade</strong>
+                <span>Finance Lead</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              <div>
+                <strong>OBIRI Finance</strong><br>
+                <small>80% faster monthly reports</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="obiri-card">
+            <img src="assets/img/modules/finance-module.png" alt="Finance Module" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3 -->
+      <div class="tab-content" data-tab="ops">
+        <div class="container modules__cards">
+          <div class="module-testimonial-card">
+            <p>"OBIRI streamlined our business operations into one dashboard..."</p>
+            <div class="user">
+              <img src="assets/img/avatar/User-5.jpg" alt="David Osei">
+              <div class="user__info">
+                <strong>David Osei</strong>
+                <span>Operations Manager</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              <div>
+                <strong>Efficiency</strong><br>
+                <small>70% less process delays</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="obiri-card">
+            <img src="assets/img/modules/ops-module.png" alt="Operations Module" />
+          </div>
         </div>
       </div>
     </div>
   </section>
-    <!-- Modules Section -->
-  <section id="features"
-  class="module-intro-section">
-      <div class="module-intro-container">
-           
-            <h2 class="module-intro-title">Most Used Modules</h2>
-            <p class="module-intro-description">No more scattered spreadsheets. No more blind spots. Just one clear view of your business.</p>
-        </div>
 
-       <!-- Category Tabs / Pills -->
-<div class="container modules__tabs" id="modules-tabs" role="tablist">
-  <button class="tab is-active" type="button" data-tab="orders">Order Management</button>
-  <button class="tab" type="button" data-tab="finance">Accounting and Finance</button>
-  <button class="tab" type="button" data-tab="ops">Business Operations</button>
-</div>
-
-<!-- Cards Wrapper for Tab Switching -->
-<div class="modules__cards-wrapper" id="modules-panes">
-  <!-- Tab 1 -->
-  <div class="tab-content active" data-tab="orders">
-    <div class="container modules__cards">
-      <!-- Module-Testimonial-Card -->
-      <div class="module-testimonial-card">
-        <p>
-          “Before OBIRI, reconciling our books was a nightmare — we often lost track of daily expenses.
-          With OBIRI’s accounting module, we close our books in hours, not weeks. Our financial accuracy
-          has improved dramatically.”
-        </p>
-        <div class="user">
-          <img src="assets/img/avatar/User-7.jpg" alt="Adewale Adetayo">
-          <div class="user__info">
-            <strong>Adewale Adetayo</strong>
-            <span>Account Manager</span>
-          </div>
-        </div>
-        <div class="metric-card">
-          <i class="fa-solid fa-arrow-trend-up"></i>
-          <div>
-            <strong>Sa ire</strong><br>
-            <small>92% reduction in errors</small>
-          </div>
-        </div>
-      </div>
-
-      <!-- Obiri Service Card (Image Asset) -->
-      <div class="obiri-card">
-        <img src="assets/img/modules/order-module.png"
-             alt="Obiri Service Module"
-             loading="lazy"
-             decoding="async" />
-      </div>
-    </div>
-  </div>
-
-  <!-- Tab 2 -->
-  <div class="tab-content" data-tab="finance">
-    <div class="container modules__cards">
-      <div class="module-testimonial-card">
-        <p>“With OBIRI Finance, we now close our books in hours, not weeks...”</p>
-        <div class="user">
-          <img src="assets/img/avatar/User-6.jpg" alt="Chioma Ade">
-          <div class="user__info">
-            <strong>Chioma Ade</strong>
-            <span>Finance Lead</span>
-          </div>
-        </div>
-        <div class="metric-card">
-          <i class="fa-solid fa-arrow-trend-up"></i>
-          <div>
-            <strong>OBIRI Finance</strong><br>
-            <small>80% faster monthly reports</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="obiri-card">
-        <img src="assets/img/modules/finance-module.png" alt="Finance Module" />
-      </div>
-    </div>
-  </div>
-
-  <!-- Tab 3 -->
-  <div class="tab-content" data-tab="ops">
-    <div class="container modules__cards">
-      <div class="module-testimonial-card">
-        <p>“OBIRI streamlined our business operations into one dashboard...”</p>
-        <div class="user">
-          <img src="assets/img/avatar/User-5.jpg" alt="David Osei">
-          <div class="user__info">
-            <strong>David Osei</strong>
-            <span>Operations Manager</span>
-          </div>
-        </div>
-        <div class="metric-card">
-          <i class="fa-solid fa-arrow-trend-up"></i>
-          <div>
-            <strong>Efficiency</strong><br>
-            <small>70% less process delays</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="obiri-card">
-        <img src="assets/img/modules/ops-module.png" alt="Operations Module" />
-      </div>
-    </div>
-  </div>
-
-</div>
-
-    
-     </section>
-<!-- ================= PRICING ================= -->
-<section class="pricing" id="pricing">
-  <div class="container">
-
-    <!-- 1) TOGGLE -->
-    <div class="pricing__toggle" role="tablist" aria-label="Billing period">
-      <button class="pill is-active" data-period="monthly" type="button">Monthly</button>
-      <button class="pill" data-period="annually" type="button">Annually</button>
-    </div>
-
-    <!-- 2) CARDS -->
-    <div class="pricing__cards">
-      <!-- Plan -->
-      <article class="plan-card" data-plan="kickstart">
-        <h3 class="plan__name">Kickstart</h3>
-        <p class="plan__price">
-          <span class="price" data-monthly="29,780" data-annually="27,500">29,780</span>
-        </p>
-        <p class="plan__meta">/user/month billed annually</p>
-        <a href="#" class="plan__cta">Book a Demo</a>
-        <p class="plan__label">All the essentials:</p>
-        <ul class="plan__list">
-          <li>Sales & purchase orders</li>
-  <li>Invoices & receipts</li>
-  <li>Basic inventory tracking (1 location)</li>
-  <li>Standard reports & exports (CSV/PDF)</li>
-  <li>Email support (business hours)</li>
-        </ul>
-      </article>
-
-      <!-- Plan -->
-      <article class="plan-card" data-plan="grow">
-        <h3 class="plan__name">Grow</h3>
-        <p class="plan__price">
-          <span class="price" data-monthly="89,780" data-annually="82,500">89,780</span>
-        </p>
-        <p class="plan__meta">/user/month billed annually</p>
-        <a href="#" class="plan__cta">Book a Demo</a>
-        <p class="plan__label">All the essentials:</p>
-        <ul class="plan__list">
-          <li>Everything in Kickstart</li>
-  <li>Multi-location inventory (up to 3)</li>
-  <li>Supplier & price list management</li>
-  <li>Bank reconciliation & cash tracking</li>
-  <li>Approval workflow (1 level)</li>
-        </ul>
-      </article>
-
-      <!-- Featured Plan -->
-      <article class="plan-card plan--featured" data-plan="scale" aria-label="Scale plan (featured)">
-        <h3 class="plan__name">Scale</h3>
-        <p class="plan__price">
-          <span class="price" data-monthly="149,999" data-annually="139,500">149,999</span>
-        </p>
-        <p class="plan__meta">/user/month billed annually</p>
-        <a href="#" class="plan__cta plan__cta--accent">Book a Demo</a>
-        <p class="plan__label">All the essentials:</p>
-        <ul class="plan__list">
-          <li>Everything in Grow</li>
-  <li>Advanced inventory (batches/serials)</li>
-  <li>Multi-warehouse & stock transfers</li>
-  <li>Realtime dashboards & scheduled reports</li>
-  <li>API access & webhooks</li>
-        </ul>
-      </article>
-
-      <!-- Plan -->
-      <article class="plan-card" data-plan="ultimate">
-        <h3 class="plan__name">
-          Ultimate
-          <span class="plan__from">From</span>
-        </h3>
-        <p class="plan__price">
-          <span class="price" data-monthly="199,780" data-annually="185,000">199,780</span>
-        </p>
-        <p class="plan__meta">/user/month billed annually</p>
-        <a href="#" class="plan__cta">Book a Demo</a>
-        <p class="plan__label">All the essentials:</p>
-        <ul class="plan__list">
-           <li>Everything in Scale</li>
-  <li>Unlimited users & custom roles/SSO</li>
-  <li>Advanced analytics & forecast tools</li>
-  <li>Dedicated success manager & SLA</li>
-  <li>Sandbox & premium integrations</li>
-        </ul>
-      </article>
-    </div>
-
-    <!-- 3) ASSET BANNER -->
-    <div class="pricing__asset">
-      <!-- Treat as an imported asset image; swap the src -->
-      <img src="assets/img/pricing-asset.png" alt="ERP for Everyone — Save Up To 54,500" />
-    </div>
-
-  </div>
-</section>
-
-<!-- ================== TESTIMONIALS ================== -->
-<section id="testimonials" class="testimonials">
-  <!-- Background image (your asset) -->
-  <div class="testimonials__bg" aria-hidden="true">
+  <!-- ================== TESTIMONIALS ================== -->
+  <section id="testimonials" class="testimonials">
+    <div class="testimonials__bg" aria-hidden="true">
       <img src="assets/img/testimonial-bg.jpg" />
+    </div>
 
-  </div>
-
-  <!-- 1) Centered heading block (same vibe as Modules intro) -->
-  <div class="container testimonials__intro">
-    <span class="section-label">Testimonials</span>
-    <h2 class="testimonials__title">What Our Customer Says</h2>
-    <p class="testimonials__desc">
-      See how businesses like yours run smarter and grow faster with Obiri.
-    </p>
-  </div>
-
-  <!-- 2) Cards -->
-  <div class="container testimonials__cards">
-    <!-- Card 1 -->
-    <article class="testimonial-card">
-      <header class="t-head">
-        <img class="t-avatar" src="assets/img/avatar/User-4.jpg" alt="David Beckham" />
-        <div class="t-id">
-          <h3>David Beckham</h3>
-          <small>COO at Sa’IRE</small>
-        </div>
-      </header>
-      <p class="t-quote">
-        Updating our room rates and service packages was a nightmare. With the catalog,
-        we now manage all our pricing in one place and can confidently adjust seasonal
-        pricing without slowing IT. Our booking errors dropped by 30%.
+    <div class="container testimonials__intro">
+      <span class="section-label">Testimonials</span>
+      <h2 class="testimonials__title">What Our Customer Says</h2>
+      <p class="testimonials__desc">
+        See how businesses like yours run smarter and grow faster with Obiri.
       </p>
-      <div class="t-meta">
-       <i class="fa-solid fa-location-dot"></i>
-      <span>Lagos</span>
-      </div>
-    </article>
+    </div>
 
-    <!-- Card 2 -->
-    <article class="testimonial-card">
-      <header class="t-head">
-        <img class="t-avatar" src="assets/img/avatar/User-2.jpg" alt="Olivia Moore" />
-        <div class="t-id">
-          <h3>Olivia Moore</h3>
-          <small>CEO at Emmaag</small>
+    <div class="container testimonials__cards">
+      <article class="testimonial-card" data-reveal="up">
+        <header class="t-head">
+          <img class="t-avatar" src="assets/img/avatar/User-4.jpg" alt="David Beckham" />
+          <div class="t-id">
+            <h3>David Beckham</h3>
+            <small>COO at Sa'IRE</small>
+          </div>
+        </header>
+        <p class="t-quote">
+          Updating our room rates and service packages was a nightmare. With the catalog,
+          we now manage all our pricing in one place and can confidently adjust seasonal
+          pricing without slowing IT. Our booking errors dropped by 30%.
+        </p>
+        <div class="t-meta">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Lagos</span>
         </div>
-      </header>
-      <p class="t-quote">
-        Taking customer orders used to be a nightmare—manual notes, missing items, wrong totals.
-        Now, with Obiri’s order system, we create accurate sales orders in minutes.
-      </p>
-      <div class="t-meta">
-       <i class="fa-solid fa-location-dot"></i>
-        <span>Ibadan</span>
-      </div>
-    </article>
+      </article>
 
-    <!-- Card 3 -->
-    <article class="testimonial-card">
-      <header class="t-head">
-        <img class="t-avatar" src="assets/img/avatar/User-3.jpg" alt="Marie Jane" />
-        <div class="t-id">
-          <h3>Marie Jane</h3>
-          <small>CFO at Ijinle</small>
+      <article class="testimonial-card" data-reveal="up" data-delay="150">
+        <header class="t-head">
+          <img class="t-avatar" src="assets/img/avatar/User-2.jpg" alt="Olivia Moore" />
+          <div class="t-id">
+            <h3>Olivia Moore</h3>
+            <small>CEO at Emmaag</small>
+          </div>
+        </header>
+        <p class="t-quote">
+          Taking customer orders used to be a nightmare—manual notes, missing items, wrong totals.
+          Now, with Obiri's order system, we create accurate sales orders in minutes.
+        </p>
+        <div class="t-meta">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Ibadan</span>
         </div>
-      </header>
-      <p class="t-quote">
-        Invoices are the lifeline of any business. With Obiri, we generate invoices instantly
-        and send them to clients without errors.
+      </article>
+
+      <article class="testimonial-card" data-reveal="up" data-delay="300">
+        <header class="t-head">
+          <img class="t-avatar" src="assets/img/avatar/User-3.jpg" alt="Marie Jane" />
+          <div class="t-id">
+            <h3>Marie Jane</h3>
+            <small>CFO at Ijinle</small>
+          </div>
+        </header>
+        <p class="t-quote">
+          Invoices are the lifeline of any business. With Obiri, we generate invoices instantly
+          and send them to clients without errors.
+        </p>
+        <div class="t-meta">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Abuja</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="FAQ" class="faq">
+    <div class="container faq__intro" data-reveal="up">
+      <span class="section-label">FAQ</span>
+      <h2 class="faq__title">Frequently Asked Questions</h2>
+      <p class="faq__sub">
+        Everything you need to know about using Obiri — from tracking to team management.
+        Find quick answers to common questions below.
       </p>
-      <div class="t-meta">
-       <i class="fa-solid fa-location-dot"></i>
-        <span>Abuja</span>
-      </div>
-    </article>
-  </div>
-</section>
-<section id="FAQ" class="faq">
-  <!-- 1) Heading -->
-  <div class="container faq__intro">
-    <span class="section-label">FAQ</span>
-    <h2 class="faq__title">Frequently Asked Questions</h2>
-    <p class="faq__sub">
-      Everything you need to know about using Obiri — from tracking to team management.
-      Find quick answers to common questions below.
-    </p>
-  </div>
+    </div>
 
-  <!-- 2) Q&A list (5 rows, 1 column) -->
-  <div class="container faq__list" role="region" aria-label="Frequently asked questions">
-    <!-- item 1 (open by default) -->
-    <div class="faq__item is-open">
-      <button class="faq__q" aria-expanded="true">
-        <span>What is Obiri?</span>
-        <span class="faq__icon" aria-hidden="true"></span>
-      </button>
-      <div class="faq__a" role="region">
-        Everything you need to know about using Obiri — shipment tracking, operations,
-        finance, and collaboration. Obiri connects all teams so data stays in sync.
+    <div class="container faq__list" role="region" aria-label="Frequently asked questions">
+      <div class="faq__item is-open" data-reveal="up">
+        <button class="faq__q" aria-expanded="true">
+          <span>What is Obiri?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a" role="region">
+          Everything you need to know about using Obiri — shipment tracking, operations,
+          finance, and collaboration. Obiri connects all teams so data stays in sync.
+        </div>
+      </div>
+
+      <div class="faq__item" data-reveal="up" data-delay="100">
+        <button class="faq__q" aria-expanded="false">
+          <span>Who is Obiri for?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a" role="region">
+          Retail, hospitality, services, and distribution businesses that need clear
+          visibility across orders, inventory, finance, and team activity.
+        </div>
+      </div>
+
+      <div class="faq__item" data-reveal="up" data-delay="200">
+        <button class="faq__q" aria-expanded="false">
+          <span>What modules does Obiri include?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a" role="region">
+          Core modules include Order Management, Inventory, Accounting & Finance,
+          Operations, and Reporting — all connected in one command center.
+        </div>
+      </div>
+
+      <div class="faq__item" data-reveal="up" data-delay="300">
+        <button class="faq__q" aria-expanded="false">
+          <span>Can I start small and scale later?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a" role="region">
+          Yes. Start with the essentials and add modules as your team grows.
+          Your data remains consistent as you scale.
+        </div>
+      </div>
+
+      <div class="faq__item" data-reveal="up" data-delay="400">
+        <button class="faq__q" aria-expanded="false">
+          <span>Does Obiri integrate with my tools?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a" role="region">
+          Obiri integrates with popular accounting, payments, and messaging tools.
+          Ask us about your specific stack.
+        </div>
       </div>
     </div>
 
-    <!-- item 2 -->
-    <div class="faq__item">
-      <button class="faq__q" aria-expanded="false">
-        <span>Who is Obiri for?</span>
-        <span class="faq__icon" aria-hidden="true"></span>
-      </button>
-      <div class="faq__a" role="region">
-        Retail, hospitality, services, and distribution businesses that need clear
-        visibility across orders, inventory, finance, and team activity.
-      </div>
+    <div class="container faq__cta">
+      <a href="#contact" class="btn btn--primary faq__cta-btn">Ask Question</a>
     </div>
+  </section>
 
-    <!-- item 3 -->
-    <div class="faq__item">
-      <button class="faq__q" aria-expanded="false">
-        <span>What modules does Obiri include?</span>
-        <span class="faq__icon" aria-hidden="true"></span>
-      </button>
-      <div class="faq__a" role="region">
-        Core modules include Order Management, Inventory, Accounting & Finance,
-        Operations, and Reporting — all connected in one command center.
-      </div>
-    </div>
+  <script src="JS/script.js"></script>
 
-    <!-- item 4 -->
-    <div class="faq__item">
-      <button class="faq__q" aria-expanded="false">
-        <span>Can I start small and scale later?</span>
-        <span class="faq__icon" aria-hidden="true"></span>
-      </button>
-      <div class="faq__a" role="region">
-        Yes. Start with the essentials and add modules as your team grows.
-        Your data remains consistent as you scale.
-      </div>
-    </div>
-
-    <!-- item 5 -->
-    <div class="faq__item">
-      <button class="faq__q" aria-expanded="false">
-        <span>Does Obiri integrate with my tools?</span>
-        <span class="faq__icon" aria-hidden="true"></span>
-      </button>
-      <div class="faq__a" role="region">
-        Obiri integrates with popular accounting, payments, and messaging tools.
-        Ask us about your specific stack.
-      </div>
-    </div>
-  </div>
-
-  <!-- 3) CTA -->
-  <div class="container faq__cta">
-    <a href="#contact" class="btn btn--primary faq__cta-btn">Ask Question</a>
-  </div>
-</section>
-
-   
-
-     <script src="JS/script.js"></script>
   <!-- ===== Footer ===== -->
-<footer class="site-footer">
-  <div class="container footer__head">
-    <!-- 1) Display text -->
-    <h2 class="footer__title">
-      Built for SMEs that<br>
-      want to scale, not<br>
-      struggle.
-    </h2>
+  <footer class="site-footer">
+    <div class="container footer__head">
+      <h2 class="footer__title">
+        Built for SMEs that<br>
+        want to scale, not<br>
+        struggle.
+      </h2>
 
-    <!-- 2) Buttons -->
-    <div class="footer__actions">
-      <a href="#waitlist" class="btn btn--primary btn--pill">
-        Join Waitlist
-        <span class="btn__chev">→</span>
-      </a>
-
-      <a href="#contact" class="btn btn--ghost btn--pill">
-        Speak with us
-        <span class="btn__icon">✉️</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- 3) Cards -->
-  <div class="container footer__cards">
-    <!-- Brand / Social -->
-    <div class="fcard fcard--light">
-      <div class="fcard__brand">
-        <img src="assets/img/logo.png" alt="Obiri" class="fcard__logo">
-        <span class="fcard__name">OBIRI</span>
-      </div>
-
-      <p class="fcard__copy">
-        Give your business the clarity it deserves.
-      </p>
-
-      <hr class="fcard__rule" />
-
-      <div class="fcard__social">
-        <!-- replace placeholders with your SVGs if you have them -->
-        <a aria-label="X/Twitter" href="#" class="social-pill">×</a>
-        <a aria-label="Instagram" href="#" class="social-pill">◎</a>
-        <a aria-label="LinkedIn" href="#" class="social-pill">in</a>
+      <div class="footer__actions">
+        <a href="#waitlist" class="btn btn--primary btn--pill">
+          Join Waitlist
+          <span class="btn__chev">→</span>
+        </a>
+        <a href="#contact" class="btn btn--ghost btn--pill">
+          Speak with us
+          <span class="btn__icon">✉️</span>
+        </a>
       </div>
     </div>
 
-    <!-- Quick links -->
-    <nav class="fcard fcard--light">
-      <span class="fcard__eyebrow">OBIRI</span>
-      <ul class="fcard__links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about-feature">About us</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-      </ul>
-    </nav>
+    <div class="container footer__cards">
+      <div class="fcard fcard--light">
+        <div class="fcard__brand">
+          <img src="assets/img/logo.png" alt="Obiri" class="fcard__logo">
+          <span class="fcard__name">OBIRI</span>
+        </div>
+        <p class="fcard__copy">Give your business the clarity it deserves.</p>
+        <hr class="fcard__rule" />
+        <div class="fcard__social">
+          <a aria-label="X/Twitter" href="#" class="social-pill">×</a>
+          <a aria-label="Instagram" href="#" class="social-pill">◎</a>
+          <a aria-label="LinkedIn" href="#" class="social-pill">in</a>
+        </div>
+      </div>
 
-    <!-- Newsletter -->
-    <div class="fcard fcard--dark">
-      <span class="fcard__eyebrow">Newsletter</span>
-      <h3 class="fcard__title">Subscribe for monthly updates</h3>
+      <nav class="fcard fcard--light">
+        <span class="fcard__eyebrow">OBIRI</span>
+        <ul class="fcard__links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about-feature">About us</a></li>
+          <li><a href="#features">Features</a></li>
+        </ul>
+      </nav>
 
-      <form class="newsletter-footer" action="#" method="post">
+      <div class="fcard fcard--dark">
+        <span class="fcard__eyebrow">Newsletter</span>
+        <h3 class="fcard__title">Subscribe for monthly updates</h3>
+        <form class="newsletter-footer" action="#" method="post">
           <label for="footer-email" class="visually-hidden">E-mail Address</label>
-          <input id="footer-email" name="email" type="email" 
-                class="email-input" placeholder="Enter your Email" required>
+          <input id="footer-email" name="email" type="email" class="email-input" placeholder="Enter your Email"
+            required>
           <button class="btn btn--pill btn--primary" type="submit">Subscribe</button>
-</form>
+        </form>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-
-    </body>
+</body>
 
 </html>

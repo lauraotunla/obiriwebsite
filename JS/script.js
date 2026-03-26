@@ -1,3 +1,54 @@
+/* ── Typewriter on hero title (word by word, with colored words) ── */
+(function () {
+  const el = document.querySelector('.hero__title');
+  if (!el) return;
+
+  const words = el.textContent.trim().split(' ');
+  // Word indices that get the accent gradient (0-based)
+  // "Built(0) for(1) the(2) business(3) you(4) are.(5) Ready(6) for(7) the(8) business(9) you'll(10) become.(11)"
+  const accented = new Set([10, 11]);
+
+  el.textContent = '';
+  const cursor = document.createElement('span');
+  cursor.className = 'tw-cursor';
+  el.appendChild(cursor);
+
+  let i = 0;
+  function typeWord() {
+    if (i < words.length) {
+      const spacer = i === 0 ? '' : ' ';
+      if (accented.has(i)) {
+        cursor.insertAdjacentText('beforebegin', spacer);
+        const span = document.createElement('span');
+        span.className = 'hero__accent';
+        span.textContent = words[i];
+        cursor.insertAdjacentElement('beforebegin', span);
+      } else {
+        cursor.insertAdjacentText('beforebegin', spacer + words[i]);
+      }
+      i++;
+      setTimeout(typeWord, 160);
+    } else {
+      setTimeout(() => cursor.classList.add('tw-cursor--done'), 900);
+    }
+  }
+  setTimeout(typeWord, 300);
+})();
+
+/* ── Scroll reveal ────────────────────────────────────────── */
+(function () {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const delay = +(entry.target.dataset.delay || 0);
+      setTimeout(() => entry.target.classList.add('is-visible'), delay);
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".modules__tabs .tab");
   const contents = document.querySelectorAll(".modules__cards-wrapper .tab-content");
